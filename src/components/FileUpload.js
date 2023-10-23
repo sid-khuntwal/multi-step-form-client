@@ -6,10 +6,8 @@ function FileUpload({ formData, setFormData }) {
         <>
             <TextField
                 placeholder="Upload"
-
                 margin="normal"
                 type={"file"}
-
                 required
 
             />

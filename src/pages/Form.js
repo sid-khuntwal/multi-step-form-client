@@ -3,8 +3,14 @@ import BasicInfo from "../components/BasicInfo";
 import DropDown from "../components/DropDown";
 import FileUpload from "../components/FileUpload";
 import { Box, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 function Form() {
+    const id = localStorage.getItem("userId");
+    console.log(id);
+    const navigate = useNavigate();
     const [page, setPage] = useState(0);
     const [formData, setFormData] = useState({
         username: "",
@@ -35,19 +41,25 @@ function Form() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log(formData);
-        // try {
-        //     const { data } = await axios.post("https://adorable-garters-moth.cyclic.app/api/v1/user/register", {
-        //         username: inputs.name,
-        //         email: inputs.email,
-        //         password: inputs.password,
-        //     });
-        //     if (data.success) {
-        //         toast.success("User Register Successfully");
-        //         navigate("/login");
-        //     }
-        // } catch (error) {
-        //     console.log(error);
-        // }
+        try {
+            const { data } = await axios.post("https://adorable-garters-moth.cyclic.app/api/v1/user/senddata", {
+                username: formData.username,
+                email: formData.email,
+                phone: formData.phoneno,
+                address: formData.address,
+                city: formData.city,
+                state: formData.city,
+                pincode: formData.city,
+                country: formData.country,
+                userId: id
+            });
+            if (data?.success) {
+                toast.success("Blog Created");
+                navigate("/dashboard");
+            }
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     return (

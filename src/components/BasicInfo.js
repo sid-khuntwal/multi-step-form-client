@@ -75,7 +75,7 @@ function BasicInfo({ formData, setFormData }) {
 
             <TextField
                 placeholder="Pin Code"
-                value={formData.email}
+                value={formData.pincode}
                 margin="normal"
                 type={"text"}
                 required

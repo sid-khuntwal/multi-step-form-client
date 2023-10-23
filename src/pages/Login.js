@@ -30,8 +30,7 @@ const Login = () => {
                 password: inputs.password,
             });
             if (data.success) {
-                // localStorage.setItem("userId", data?.user._id);
-                // dispatch(authActions.login());
+                localStorage.setItem("userId", data?.user._id);
                 toast.success("User login Successfully");
                 navigate("/form");
             }

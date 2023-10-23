@@ -4,17 +4,15 @@ function DropDown({ formData, setFormData }) {
     return (
         <>
             <FormControl fullWidth>
-                <InputLabel id="demo-simple-select-label">Age</InputLabel>
+                <InputLabel id="demo-simple-select-label">Options</InputLabel>
                 <Select
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
-
                     label="Age"
-
                 >
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
+                    <MenuItem value={10}>one</MenuItem>
+                    <MenuItem value={20}>Two</MenuItem>
+                    <MenuItem value={30}>Three</MenuItem>
                 </Select>
             </FormControl>
         </>
