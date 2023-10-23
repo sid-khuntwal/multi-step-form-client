@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import BasicInfo from "../components/BasicInfo";
 import DropDown from "../components/DropDown";
 import FileUpload from "../components/FileUpload";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import toast from "react-hot-toast";
@@ -25,7 +25,7 @@ function Form() {
         location: "",
     });
 
-    const FormTitles = ["Sign Up", "Personal Info", "Other"];
+    const FormTitles = ["Personal Info", "Upload Files", "Others"];
 
     const PageDisplay = () => {
         if (page === 0) {
@@ -73,8 +73,9 @@ function Form() {
                         }}
                     ></div>
                 </div>
-                <Box maxWidth={600}
+                <Box
                     maxHeight={600}
+                    maxWidth={600}
                     display="flex"
                     flexDirection={"column"}
                     alignItems="center"

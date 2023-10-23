@@ -1,7 +1,18 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { TextField } from "@mui/material";
 
 function FileUpload({ formData, setFormData }) {
+    const [currLocationJs, setCurrLocationJs] = useState({});
+    useEffect(() => {
+        getLocationJs();
+    }, []);
+    const getLocationJs = () => {
+        navigator.geolocation.getCurrentPosition((position) => {
+            console.log(position);
+            const { latitude, longitude } = position.coords;
+            setCurrLocationJs({ latitude, longitude });
+        });
+    };
     return (
         <>
             <TextField
@@ -14,13 +25,13 @@ function FileUpload({ formData, setFormData }) {
 
             <TextField
                 placeholder="Location"
-                value={formData.username}
+                value={currLocationJs.latitude}
                 margin="normal"
                 type={"text"}
 
                 required
                 onChange={(e) => {
-                    setFormData({ ...formData, filename: e.target.value });
+                    setFormData({ ...formData, location: e.target.value });
                 }}
             />
 
