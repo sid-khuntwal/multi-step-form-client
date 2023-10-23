@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import BasicInfo from "../components/BasicInfo";
 import DropDown from "../components/DropDown";
 import FileUpload from "../components/FileUpload";
-import { Box, Typography, TextField, Button } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 function Form() {
     const [page, setPage] = useState(0);

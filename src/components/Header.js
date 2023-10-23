@@ -6,8 +6,7 @@ import {
     Toolbar,
     Button,
     Typography,
-    Tabs,
-    Tab,
+    Tabs
 } from "@mui/material";
 import { Link } from "react-router-dom";
 
@@ -20,16 +19,16 @@ const Header = () => {
     const [value, setValue] = useState();
 
     //logout
-    const handleLogout = () => {
-        // try {
-        //     dispatch(authActions.logout());
-        //     toast.success("Logout Successfully");
-        //     navigate("/login");
-        //     localStorage.clear();
-        // } catch (error) {
-        //     console.log(error);
-        // }
-    };
+    // const handleLogout = () => {
+    //     // try {
+    //     //     dispatch(authActions.logout());
+    //     //     toast.success("Logout Successfully");
+    //     //     navigate("/login");
+    //     //     localStorage.clear();
+    //     // } catch (error) {
+    //     //     console.log(error);
+    //     // }
+    // };
     return (
         <>
             <AppBar position="sticky">
